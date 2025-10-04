@@ -1,0 +1,100 @@
+*** Bắt đầu phiên làm việc. Toàn bộ output sẽ được lưu vào file 'model_training_log.txt' ***
+
+Tải dữ liệu thành công: 2070 dòng, 10245 cột.
+Lựa chọn được 203 đặc trưng. Đã lưu các công cụ tiền xử lý vào 'trained_models_package'.
+
+--- A. Bắt đầu Đánh giá Hiệu suất Mô hình bằng Cross-Validation ---
+
+--- Đang đánh giá model: Logistic_Regression ---
+   Classification Report (từ fold cuối cùng để tham khảo):
+              precision    recall  f1-score   support
+
+           0       0.69      0.64      0.67        14
+           1       0.55      0.60      0.57        10
+
+    accuracy                           0.62        24
+   macro avg       0.62      0.62      0.62        24
+weighted avg       0.63      0.62      0.63        24
+
+--- Đang đánh giá model: Random_Forest ---
+   Classification Report (từ fold cuối cùng để tham khảo):
+              precision    recall  f1-score   support
+
+           0       0.67      0.57      0.62        14
+           1       0.50      0.60      0.55        10
+
+    accuracy                           0.58        24
+   macro avg       0.58      0.59      0.58        24
+weighted avg       0.60      0.58      0.59        24
+
+--- Đang đánh giá model: LightGBM ---
+   Classification Report (từ fold cuối cùng để tham khảo):
+              precision    recall  f1-score   support
+
+           0       0.73      0.57      0.64        14
+           1       0.54      0.70      0.61        10
+
+    accuracy                           0.62        24
+   macro avg       0.63      0.64      0.62        24
+weighted avg       0.65      0.62      0.63        24
+
+--- Đang đánh giá model: SVC ---
+   Classification Report (từ fold cuối cùng để tham khảo):
+              precision    recall  f1-score   support
+
+           0       0.62      0.57      0.59        14
+           1       0.45      0.50      0.48        10
+
+    accuracy                           0.54        24
+   macro avg       0.53      0.54      0.53        24
+weighted avg       0.55      0.54      0.54        24
+
+--- Đang đánh giá model: Gradient_Boosting ---
+   Classification Report (từ fold cuối cùng để tham khảo):
+              precision    recall  f1-score   support
+
+           0       0.69      0.64      0.67        14
+           1       0.55      0.60      0.57        10
+
+    accuracy                           0.62        24
+   macro avg       0.62      0.62      0.62        24
+weighted avg       0.63      0.62      0.63        24
+
+--- Đang đánh giá model: KNeighbors ---
+   Classification Report (từ fold cuối cùng để tham khảo):
+              precision    recall  f1-score   support
+
+           0       0.50      0.36      0.42        14
+           1       0.36      0.50      0.42        10
+
+    accuracy                           0.42        24
+   macro avg       0.43      0.43      0.42        24
+weighted avg       0.44      0.42      0.42        24
+
+
+--- Bảng Tổng hợp Kết quả Cross-Validation ---
+                 model  Accuracy       AUC  F1-score
+4    Gradient_Boosting  0.608333  0.673167  0.598692
+1        Random_Forest  0.600000  0.624760  0.581391
+0  Logistic_Regression  0.566667  0.611948  0.564206
+2             LightGBM  0.566667  0.575165  0.560912
+3                  SVC  0.583333  0.544296  0.578020
+5           KNeighbors  0.491667  0.493462  0.484502
+
+   - Đang tạo các biểu đồ so sánh hiệu suất...
+   -> Đã lưu biểu đồ so sánh 'Accuracy' vào: 'trained_models_package\performance_comparison_Accuracy.png'
+   -> Đã lưu biểu đồ so sánh 'AUC' vào: 'trained_models_package\performance_comparison_AUC.png'
+   -> Đã lưu biểu đồ so sánh 'F1-score' vào: 'trained_models_package\performance_comparison_F1-score.png'
+--------------------------------------------------
+   -> Đã lưu bảng hiệu suất mô hình vào 'trained_models_package'.
+
+--- B. Bắt đầu Huấn luyện và Lưu trữ các Mô hình vào thư mục 'trained_models_package' ---
+
+   -> Đã huấn luyện và lưu mô hình: trained_models_package\model_Logistic_Regression.joblib
+   -> Đã huấn luyện và lưu mô hình: trained_models_package\model_Random_Forest.joblib
+   -> Đã huấn luyện và lưu mô hình: trained_models_package\model_LightGBM.joblib
+   -> Đã huấn luyện và lưu mô hình: trained_models_package\model_SVC.joblib
+   -> Đã huấn luyện và lưu mô hình: trained_models_package\model_Gradient_Boosting.joblib
+   -> Đã huấn luyện và lưu mô hình: trained_models_package\model_KNeighbors.joblib
+
+--- Hoàn thành Huấn luyện và Lưu trữ ---
